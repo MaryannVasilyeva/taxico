@@ -1,0 +1,19 @@
+<div>
+    <p style="font-size: 18px; font-weight: bold; color: #666666">Vehicle Information</p>
+    <hr/>
+    <div class="row">
+        <div class="form-group col-md-6 required has-feedback">
+            <label>Plate Number</label>
+            {{input value=vehicle.plate_number type='text' class='form-control' placeholder='First Name'}}
+        </div>
+    </div>
+    <div>
+        <ul class="nav navbar-nav pull-left">
+            <li>
+                <button {{action 'updateVehicle'}} class="btn btn-success btn-sm navbar-secondary-btn btn-sm"
+                                                  type="button"> Update
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

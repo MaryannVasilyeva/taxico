@@ -34,28 +34,31 @@
             <div id="mainbox">
                 <div class="border">
                     {{#each model as |vehicle|}}
-                        <br/>
-                        Plate Number: {{vehicle.plate_number}}
-                        <br/>
-                        <br/>
-                        Date Added:{{vehicle.str_created_at_date}}
-                        <br/>
-                        <div align="right">
-                            <button {{action 'remove' vehicle}} class="btn btn-danger btn-sm navbar-secondary-btn"
-                                                                type="submit">
-                                Remove
-                            </button>
-                            {{!-- <button class="btn btn-warning btn-sm navbar-secondary-btn" type="submit">
-                                 {{#link-to 'vehicles.view' vehicle.id}} Update {{/link-to}}
-                             </button>--}}
-                        </div>
-                        <p class="bottomBorder"></p>
+                        {{#link-to 'vehicles.view' vehicle.id}}
+                            <br/>
+                            Plate Number: {{vehicle.plate_number}}
+                            <br/>
+                            <br/>
+                            Date Added:{{vehicle.str_created_at_date}}
+                            <br/>
+                            <div align="right">
+                                <button {{action 'remove' vehicle}} class="btn btn-warning btn-sm navbar-secondary-btn"
+                                                                    type="submit">
+                                    Remove
+                                </button>
+                                {{!-- <button class="btn btn-warning btn-sm navbar-secondary-btn" type="submit">
+                                     {{#link-to 'vehicles.view' vehicle.id}} Update {{/link-to}}
+                                 </button>--}}
+                            </div>
+                            <p class="bottomBorder"></p>
+                        {{/link-to}}
                     {{/each}}
                 </div>
             </div>
         </table>
     </div>
 </div>
+{{outlet}}
 
 
 

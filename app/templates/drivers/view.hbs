@@ -1,0 +1,31 @@
+<div>
+    <p style="font-size: 18px; font-weight: bold; color: #666666">Driver Information</p>
+    <hr/>
+    <div class="row">
+        <div class="form-group col-md-6 required has-feedback">
+            <label>First Name</label>
+            {{input value=driver.first_name type='text' class='form-control' placeholder='First Name'}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6 required has-feedback">
+            <label>Last Name</label>
+            {{input value=driver.last_name type='text' class='form-control' placeholder='Last Name'}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6 required has-feedback">
+            <label>Driver License Number</label>
+            {{input value=driver.driver_license_number type='text' class='form-control' placeholder='Driver License Number'}}
+        </div>
+    </div>
+    <div>
+        <ul class="nav navbar-nav pull-left">
+            <li>
+                <button {{action 'updateDriver'}} class="btn btn-success btn-sm navbar-secondary-btn btn-sm"
+                                                  type="button"> Update
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

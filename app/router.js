@@ -6,9 +6,15 @@ const Router = Ember.Router.extend( {
 } );
 
 Router.map( function(){
-    this.route( 'vehicles' );
-    this.route( 'drivers' );
-    this.route( 'schedules', { path: '/' } );
+    this.route( 'vehicles', function(){
+        this.route( 'view', { path: '/:vehicle_id' } );
+    } );
+    this.route( 'drivers', function(){
+        this.route( 'view', { path: '/:driver_id' } );
+    } );
+    this.route( 'schedules', { path: '/' }, (
+        this.route( 'view', { path: '/:schedule_id' } )
+    ) );
 } );
 
 export default Router;

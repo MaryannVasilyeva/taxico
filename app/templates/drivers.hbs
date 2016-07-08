@@ -43,32 +43,30 @@
             <div id="mainbox">
                 <div class="border">
                     {{#each model as |driver|}}
-                        <br/>
-                        First Name: {{driver.first_name}}
-                        <br/>
-                        <br/>
-                        Last Name:{{driver.last_name}}
-                        <br/>
-                        <br/>
-                        Driver License Number: {{driver.driver_license_number}}
-                        <br/>
-                        <br/>
-                        {{!--<div align="left">
-                            <button class="btn btn-warning btn-sm navbar-secondary-btn"
-                                     type="submit">{{#link-to 'drivers.view' driver}}<a href=""> Update </a>{{/link-to}}</button>
-                        </div>--}}
-                        <div align="right">
-                            <button {{action 'remove' driver}} class="btn btn-danger btn-sm navbar-secondary-btn"
-                                                               type="submit">
-                                Remove
-                            </button>
-                        </div>
-                        <p class="bottomBorder"></p>
+                        {{#link-to 'drivers.view' driver.id}}
+                            <br/>
+                            First Name: {{driver.first_name}}
+                            <br/>
+                            <br/>
+                            Last Name:  {{driver.last_name}}
+                            <br/>
+                            <br/>
+                            Driver License Number: {{driver.driver_license_number}}
+                            <br/>
+                            <br/>
+                            <div align="right">
+                                <button {{action 'remove' driver}} class="btn btn-warning btn-sm navbar-secondary-btn"
+                                                                   type="submit">
+                                    Remove
+                                </button>
+                            </div>
+                            <p class="bottomBorder"></p>
+                        {{/link-to}}
                     {{/each}}
                 </div>
             </div>
         </table>
     </div>
 </div>
-
+{{outlet}}
 
