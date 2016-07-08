@@ -33,31 +33,39 @@
         </div>
     </div>
 </div>
+<div class="col-md-2"></div>
 <div style="width: 100%; margin: 0 auto; ">
-    <div class="col-md-6" align="right">
+    <div class="col-md-4" align="center">
         <legend>
-            <h4>MY DRIVERS</h4>
+            <h4 align="center">DRIVERS</h4>
         </legend>
         <table>
-            <div class="border">
-                {{#each model as |driver|}}
-                    <br/>
-                    First Name: {{driver.first_name}}
-                    <br/>
-                    <br/>
-                    Last Name:{{driver.last_name}}
-                    <br/>
-                    <br/>
-                    Driver License Number: {{driver.driver_license_number}}
-                    <br/>
-                    <div align="right">
-                        <button {{action 'remove' driver}} class="btn btn-warning btn-sm navbar-secondary-btn"
-                                                           type="submit">
-                            Delete
-                        </button>
-                    </div>
-                    <p class="bottomBorder"></p>
-                {{/each}}
+            <div id="mainbox">
+                <div class="border">
+                    {{#each model as |driver|}}
+                        <br/>
+                        First Name: {{driver.first_name}}
+                        <br/>
+                        <br/>
+                        Last Name:{{driver.last_name}}
+                        <br/>
+                        <br/>
+                        Driver License Number: {{driver.driver_license_number}}
+                        <br/>
+                        <br/>
+                        {{!--<div align="left">
+                            <button class="btn btn-warning btn-sm navbar-secondary-btn"
+                                     type="submit">{{#link-to 'drivers.view' driver}}<a href=""> Update </a>{{/link-to}}</button>
+                        </div>--}}
+                        <div align="right">
+                            <button {{action 'remove' driver}} class="btn btn-danger btn-sm navbar-secondary-btn"
+                                                               type="submit">
+                                Remove
+                            </button>
+                        </div>
+                        <p class="bottomBorder"></p>
+                    {{/each}}
+                </div>
             </div>
         </table>
     </div>

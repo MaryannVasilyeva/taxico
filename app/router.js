@@ -7,9 +7,7 @@ const Router = Ember.Router.extend( {
 
 Router.map( function(){
     this.route( 'vehicles' );
-    this.route('drivers', function(){
-        this.route( 'view' );
-    });
+    this.route( 'drivers' );
     this.route( 'schedules', { path: '/' } );
 } );
 

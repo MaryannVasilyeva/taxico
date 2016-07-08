@@ -24,32 +24,40 @@
         </div>
     </div>
 </div>
+<div class="col-md-2"></div>
 <div style="width: 100%; margin: 0 auto; ">
-    <div class="col-md-6" align="right">
+    <div class="col-md-4" align="center">
         <legend>
-            <h4>MY VEHICLES</h4>
+            <h4 align="center">VEHICLES</h4>
         </legend>
         <table>
-            <div class="border">
-                {{#each model as |vehicle|}}
-                    <br/>
-                    Plate Number: {{vehicle.plate_number}}
-                    <br/>
-                    <br/>
-                    Date Added:{{vehicle.str_created_at_date}}
-                    <br/>
-                    <div align="right">
-                        <button {{action 'remove' vehicle}} class="btn btn-warning btn-sm navbar-secondary-btn"
-                                                            type="submit">
-                            Delete
-                        </button>
-                    </div>
-                    <p class="bottomBorder"></p>
-                {{/each}}
+            <div id="mainbox">
+                <div class="border">
+                    {{#each model as |vehicle|}}
+                        <br/>
+                        Plate Number: {{vehicle.plate_number}}
+                        <br/>
+                        <br/>
+                        Date Added:{{vehicle.str_created_at_date}}
+                        <br/>
+                        <div align="right">
+                            <button {{action 'remove' vehicle}} class="btn btn-danger btn-sm navbar-secondary-btn"
+                                                                type="submit">
+                                Remove
+                            </button>
+                            {{!-- <button class="btn btn-warning btn-sm navbar-secondary-btn" type="submit">
+                                 {{#link-to 'vehicles.view' vehicle.id}} Update {{/link-to}}
+                             </button>--}}
+                        </div>
+                        <p class="bottomBorder"></p>
+                    {{/each}}
+                </div>
             </div>
         </table>
     </div>
 </div>
+
+
 
 
 

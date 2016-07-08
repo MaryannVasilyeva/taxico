@@ -15,7 +15,7 @@ export default Ember.Controller.extend( {
                     self.notify.success( 'Add to the Schedule', { closeAfter: 5000 } );
                     var route = self.container.lookup( 'route: schedules ' );
                     route.refresh();
-                    self.transitionToRoute( '/schedules', { path: '/' } );
+                    self.transitionToRoute( 'schedules' );
                 }
             );
 

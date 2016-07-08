@@ -1,15 +1,3 @@
-{{!--<div style="padding: 40px;">
-    <div class="row">
-        <div class="form-group col-md-5 has-feedback">
-            <label>Driver</label>
-            {{#x-select class='form-control'}}
-                {{#each driverOptions as |driver|}}
-                    {{#x-option value=driver.val}}{{driver.label}}{{/x-option}}
-                {{/each}}
-            {{/x-select}}
-        </div>
-    </div>
-</div>--}}
 <div style="width: 100%; margin: 0 auto; ">
     <div class="col-md-6" align="left">
         <legend>
@@ -49,28 +37,31 @@
         </div>
     </div>
 </div>
+<div class="col-md-2"></div>
 <div style="width: 100%; margin: 0 auto; ">
-    <div class="col-md-6" align="right">
+    <div class="col-md-4" align="right">
         <legend>
-            <h4>MY SCHEDULE</h4>
+            <h4 align="center">SCHEDULES</h4>
         </legend>
         <table>
-            <div class="border">
-                {{#each model as |schedule|}}
-                    <br/>
-                    Driver Name: {{schedule.driver_name}}
-                    <br/>
-                    <br/>
-                    Vehicle Plate Number: {{schedule.vehicle_plate_number}}
-                    <br/>
-                    <br/>
-                    Starting Day:{{schedule.str_starting_at_date}}
-                    <br/>
-                    <br/>
-                    Ending Day: {{schedule.str_ending_at_date}}
-                    <br/>
-                    <p class="bottomBorder"></p>
-                {{/each}}
+            <div id="mainbox">
+                <div class="card">
+                    {{#each model as |schedule|}}
+                        <br/>
+                        Driver Name: {{schedule.driver_name}}
+                        <br/>
+                        <br/>
+                        Vehicle Plate Number: {{schedule.vehicle_plate_number}}
+                        <br/>
+                        <br/>
+                        Starting Day: {{schedule.str_starting_at_date}}
+                        <br/>
+                        <br/>
+                        Ending Day: {{schedule.str_ending_at_date}}
+                        <br/>
+                        <p class="bottomBorder"></p>
+                    {{/each}}
+                </div>
             </div>
         </table>
     </div>

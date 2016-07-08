@@ -12,7 +12,7 @@ export default Ember.Controller.extend( {
                 function(){
                     var route = self.container.lookup( 'route:vehicles ' );
                     route.refresh();
-                    self.transitionToRoute( '/vehicles' );
+                    self.transitionToRoute( 'vehicles' );
                 }
             );
 
@@ -23,7 +23,7 @@ export default Ember.Controller.extend( {
                 function(){
                     var route = self.container.lookup( 'route:vehicles' );
                     route.refresh();
-                    self.transitionToRoute( '/vehicles' );
+                    self.transitionToRoute( 'vehicles' );
                 }
             );
         }

@@ -1,13 +1,37 @@
 @import "bootstrap";
 
 body {
+  background-color: #e8e8e8;
   padding-top: 20px;
 }
 .border {
+  width: 250px;
   border-top: 1px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;
+  border-bottom: 1px solid gray;
+  padding: 2px 16px;
 }
 .bottomBorder {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid gray;
+}
+
+.card{
+  width: 350px;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  box-shadow: 1px 1px 3px #888;
+  min-height: 250px;
+  padding-: 10px;
+  margin: 10px;
+}
+
+#mainbox{
+  font-family: calibri;
+  box-sizing: border-box;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
 }

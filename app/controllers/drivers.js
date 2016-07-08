@@ -14,18 +14,19 @@ export default Ember.Controller.extend( {
                 function(){
                     var route = self.container.lookup( 'route: drivers' );
                     route.refresh();
-                    self.transitionToRoute( '/drivers' );
+                    self.transitionToRoute( 'drivers' );
                 }
             );
 
         },
+        
         remove: function( driver ){
             var self = this;
             driver.destroyRecord().then(
                 function(){
                     var route = self.container.lookup( 'route:drivers' );
                     route.refresh();
-                    self.transitionToRoute( '/drivers' );
+                    self.transitionToRoute( 'drivers' );
                 }
             );
         }

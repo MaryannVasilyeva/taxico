@@ -1,5 +1,5 @@
 import Ember from 'ember';
-console.log( 'schedule route' );
+
 export default Ember.Route.extend( {
     model: function(){
         return this.store.findAll( 'schedule' );
@@ -13,7 +13,4 @@ export default Ember.Route.extend( {
         } );
         controller.set( 'model', model );
     }
-    // renderTemplate: function( controller, model ){
-    //     this.render( '/' );
-    // }
 } );
