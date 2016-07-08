@@ -1,0 +1,56 @@
+<div style="width: 100%; margin: 0 auto; ">
+    <div class="col-md-6" align="left">
+        <legend>
+            <h4>ADD VEHICLE</h4>
+        </legend>
+        <div>
+            <label>Plate Number: </label>
+            {{textarea value=vehicle.plate_number class='form-control' rows='1' placeholder='Plate Number'}}
+            {{!--{{#x-select class='form-control'}}
+                            {{#each driverOptions as |driver|}}
+                                {{#x-option value=driver.val}}{{driver.label}}{{/x-option}}
+                            {{/each}}
+                        {{/x-select}}--}}
+        </div>
+        {{!--<div>
+            <label>Date Added: </label>
+            {{textarea value=vehicle.date_added class='form-control' rows='1' placeholder='Date Added'}}
+        </div>--}}
+        <br/>
+        <div>
+            <button {{action 'addVehicle'}} class="btn btn-primary navbar-secondary-btn" type="submit">
+                Create
+            </button>
+        </div>
+    </div>
+</div>
+<div style="width: 100%; margin: 0 auto; ">
+    <div class="col-md-6" align="right">
+        <legend>
+            <h4>MY VEHICLES</h4>
+        </legend>
+        <table>
+            <div class="border">
+                {{#each model as |vehicle|}}
+                    <br/>
+                    Plate Number: {{vehicle.plate_number}}
+                    <br/>
+                    <br/>
+                    Date Added:{{vehicle.str_created_at_date}}
+                    <br/>
+                    <div align="right">
+                        <button {{action 'remove' vehicle}} class="btn btn-warning btn-sm navbar-secondary-btn"
+                                                            type="submit">
+                            Delete
+                        </button>
+                    </div>
+                    <p class="bottomBorder"></p>
+                {{/each}}
+            </div>
+        </table>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,80 @@
+{{!--<div style="padding: 40px;">
+    <div class="row">
+        <div class="form-group col-md-5 has-feedback">
+            <label>Driver</label>
+            {{#x-select class='form-control'}}
+                {{#each driverOptions as |driver|}}
+                    {{#x-option value=driver.val}}{{driver.label}}{{/x-option}}
+                {{/each}}
+            {{/x-select}}
+        </div>
+    </div>
+</div>--}}
+<div style="width: 100%; margin: 0 auto; ">
+    <div class="col-md-6" align="left">
+        <legend>
+            <h4>ADD TO SCHEDULE</h4>
+        </legend>
+        <div>
+            <label>Driver Name: </label>
+            {{textarea value=schedule.driver_name class='form-control' rows='2' placeholder='Driver Name'}}
+            {{!--{{#x-select class='form-control'}}
+                            {{#each driverOptions as |driver|}}
+                                {{#x-option value=driver.val}}{{driver.label}}{{/x-option}}
+                            {{/each}}
+                        {{/x-select}}--}}
+        </div>
+        <div>
+            <label>Vehicle Plate Number: </label>
+            {{textarea value=schedule.vehicle_plate_number class='form-control' rows='2' placeholder='Vehicle Plate Number'}}
+            {{!--{{#x-select class='form-control'}}
+                            {{#each vehicleOptions as |vehicle|}}
+                                {{#x-option value=vehicle.val}}{{vehicle.label}}{{/x-option}}
+                            {{/each}}
+                        {{/x-select}}--}}
+        </div>
+        <div>
+            <label>Start Day: </label>
+            {{textarea value=schedule.start_day class='form-control' rows='2' placeholder='Start Day'}}
+        </div>
+        <div>
+            <label>End Day: </label>
+            {{textarea value=schedule.end_day class='form-control' rows='2' placeholder='End Day'}}
+        </div>
+        <br/>
+        <div>
+            <button {{action 'addSchedule'}} class="btn btn-success navbar-secondary-btn" type="submit">
+                Create
+            </button>
+        </div>
+    </div>
+</div>
+<div style="width: 100%; margin: 0 auto; ">
+    <div class="col-md-6" align="right">
+        <legend>
+            <h4>MY SCHEDULE</h4>
+        </legend>
+        <table>
+            <div class="border">
+                {{#each model as |schedule|}}
+                    <br/>
+                    Driver Name: {{schedule.driver_name}}
+                    <br/>
+                    <br/>
+                    Vehicle Plate Number: {{schedule.vehicle_plate_number}}
+                    <br/>
+                    <br/>
+                    Starting Day:{{schedule.str_starting_at_date}}
+                    <br/>
+                    <br/>
+                    Ending Day: {{schedule.str_ending_at_date}}
+                    <br/>
+                    <p class="bottomBorder"></p>
+                {{/each}}
+            </div>
+        </table>
+    </div>
+</div>
+
+
+

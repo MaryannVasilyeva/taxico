@@ -1,0 +1,66 @@
+<div style="width: 100%; margin: 0 auto; ">
+    <div class="col-md-6" align="left">
+        <legend>
+            <h4>ADD DRIVER</h4>
+        </legend>
+        <div>
+            <label>First Name: </label>
+            {{textarea value=driver.first_name class='form-control' rows='1' placeholder='First Name'}}
+            {{!--{{#x-select class='form-control'}}
+                            {{#each driverOptions as |driver|}}
+                                {{#x-option value=driver.val}}{{driver.label}}{{/x-option}}
+                            {{/each}}
+                        {{/x-select}}--}}
+        </div>
+        <div>
+            <label>Last Name: </label>
+            {{textarea value=driver.last_name class='form-control' rows='1' placeholder='Last Name'}}
+            {{!--{{#x-select class='form-control'}}
+                            {{#each vehicleOptions as |vehicle|}}
+                                {{#x-option value=vehicle.val}}{{vehicle.label}}{{/x-option}}
+                            {{/each}}
+                        {{/x-select}}--}}
+        </div>
+        <div>
+            <label>Driver License Number: </label>
+            {{textarea value=driver.driver_license_number class='form-control' rows='1' placeholder='Driver License Number'}}
+        </div>
+        <br/>
+        <div>
+            <button {{action 'addDriver'}} class="btn btn-primary navbar-secondary-btn" type="submit">
+                Create
+            </button>
+        </div>
+    </div>
+</div>
+<div style="width: 100%; margin: 0 auto; ">
+    <div class="col-md-6" align="right">
+        <legend>
+            <h4>MY DRIVERS</h4>
+        </legend>
+        <table>
+            <div class="border">
+                {{#each model as |driver|}}
+                    <br/>
+                    First Name: {{driver.first_name}}
+                    <br/>
+                    <br/>
+                    Last Name:{{driver.last_name}}
+                    <br/>
+                    <br/>
+                    Driver License Number: {{driver.driver_license_number}}
+                    <br/>
+                    <div align="right">
+                        <button {{action 'remove' driver}} class="btn btn-warning btn-sm navbar-secondary-btn"
+                                                           type="submit">
+                            Delete
+                        </button>
+                    </div>
+                    <p class="bottomBorder"></p>
+                {{/each}}
+            </div>
+        </table>
+    </div>
+</div>
+
+
