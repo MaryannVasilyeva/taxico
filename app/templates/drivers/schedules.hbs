@@ -1,10 +1,7 @@
 <div style="width: 100%; margin: 0 auto; ">
-    {{#each model as |schedule|}}
-        {{log schedule.id}}
-    {{/each}}
     <div class="col-md-4" align="center">
         <legend>
-            <h4 align="center">Schedules for: {{driver.id}}</h4>
+            <h4 align="center">Schedules for this Driver</h4>
         </legend>
         <table>
             <div id="mainbox">
@@ -14,10 +11,10 @@
                         Vehicle Id: {{schedule.vehicle_id}}
                         <br/>
                         <br/>
-                        Start Day: {{schedule.start_day}}
+                        Start Day: {{schedule.str_starting_at_date}}
                         <br/>
                         <br/>
-                        End Day:: {{schedule.end_day}}
+                        End Day:: {{schedule.str_ending_at_date}}
                         <br/>
                         <br/>
                         <div align="right">

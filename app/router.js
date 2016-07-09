@@ -10,9 +10,8 @@ Router.map( function(){
         this.route( 'view', { path: '/:vehicle_id' } );
     } );
     this.route( 'drivers', function(){
-        this.route( 'view', { path: '/:driver_id' }, function(){
-            this.route( 'schedules', { path: '/schedules' } );
-        } );
+        this.route( 'view', {path: '/:driver_id'} );
+        this.route( 'view.schedules', { path: '/:driver_id/schedules' } );
     } );
     this.route( 'schedules', { path: '/' }, (
         this.route( 'view', { path: '/:schedule_id' } )
