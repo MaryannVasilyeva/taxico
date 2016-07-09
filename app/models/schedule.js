@@ -5,7 +5,7 @@ export default DS.Model.extend( {
     start_day: DS.attr(),
     end_day: DS.attr(),
     vehicle_plate_number: DS.attr(),
-    // vehicle_id: DS.attr(),
+    vehicle_id: DS.attr(),
     driver_id: DS.attr(),
     driver_name: DS.attr(),
 

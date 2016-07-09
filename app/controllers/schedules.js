@@ -1,15 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend( {
+
+    // deviceTypes: [
+    //     { label: 'Select a Driver' }
+    //     // { label: 'Driver_1', val: 0 },
+    //     // { label: 'Driver_2', val: 1 },
+    //     // { label: 'Driver_3', val: 2 }
+    // ],
+
     actions: {
         addSchedule: function(){
             var self = this;
-            var newSchedule = self.store.createRecord( 'schedule', {
-                driver_name: self.get( 'schedule.driver_name' ),
-                vehicle_plate_number: self.get( 'schedule.vehicle_plate_number' ),
-                start_day: self.get( 'schedule.start_day' ),
-                end_day: self.get( 'schedule.end_day' )
-            } );
+            var newSchedule = self.store.createRecord( 'schedule', this.get( 'schedule' ) );
+
             newSchedule.save().then(
                 function(){
                     self.notify.success( 'Add to the Schedule', { closeAfter: 5000 } );

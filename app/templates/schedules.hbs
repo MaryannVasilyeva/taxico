@@ -4,22 +4,24 @@
             <h4>ADD TO SCHEDULE</h4>
         </legend>
         <div>
-            <label>Driver Name: </label>
-            {{textarea value=schedule.driver_name class='form-control' rows='2' placeholder='Driver Name'}}
-            {{!--{{#x-select class='form-control'}}
-                            {{#each driverOptions as |driver|}}
-                                {{#x-option value=driver.val}}{{driver.label}}{{/x-option}}
-                            {{/each}}
-                        {{/x-select}}--}}
+            <label>Driver Id: </label>
+            {{!--{{textarea value=schedule.driver_name class='form-control' rows='2' placeholder='Driver Name'}}--}}
+            {{#x-select value=schedule.driver_id class='form-control'}}
+                {{#x-option value=""}}Select Driver{{/x-option}}
+                {{#each driver as |driver|}}
+                    {{#x-option value=driver.id}}{{driver.id}}{{/x-option}}
+                {{/each}}
+            {{/x-select}}
         </div>
         <div>
-            <label>Vehicle Plate Number: </label>
-            {{textarea value=schedule.vehicle_plate_number class='form-control' rows='2' placeholder='Vehicle Plate Number'}}
-            {{!--{{#x-select class='form-control'}}
-                            {{#each vehicleOptions as |vehicle|}}
-                                {{#x-option value=vehicle.val}}{{vehicle.label}}{{/x-option}}
-                            {{/each}}
-                        {{/x-select}}--}}
+            <label>Vehicle Id: </label>
+            {{!--{{textarea value=schedule.vehicle_plate_number class='form-control' rows='2' placeholder='Vehicle Plate Number'}}--}}
+            {{#x-select value=schedule.vehicle_id class='form-control'}}
+                {{#x-option value=""}}Select Vehicle{{/x-option}}
+                {{#each vehicle as |vehicle|}}
+                    {{#x-option value=vehicle.id}}{{vehicle.id}}{{/x-option}}
+                {{/each}}
+            {{/x-select}}
         </div>
         <div>
             <label>Start Day: </label>
@@ -48,10 +50,10 @@
                 <div class="card">
                     {{#each model as |schedule|}}
                         <br/>
-                        Driver Name: {{schedule.driver_name}}
+                        Driver Name: {{schedule.driver_id}}
                         <br/>
                         <br/>
-                        Vehicle Plate Number: {{schedule.vehicle_plate_number}}
+                        Vehicle Plate Number: {{schedule.vehicle_id}}
                         <br/>
                         <br/>
                         Starting Day: {{schedule.str_starting_at_date}}

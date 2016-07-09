@@ -9,4 +9,11 @@ export default DS.Model.extend( {
     full_name: function(){
         return this.get( 'first_name' ) + ' ' + this.get( 'last_name' );
     }.property( 'first_name', 'last_name' )
+
+    // driverLabel: function(){
+    //     var driver = this.get( 'id' );
+    //     if( driver === true ){
+    //         return driver;
+    //     }
+    // }.property( 'id' )
 } );

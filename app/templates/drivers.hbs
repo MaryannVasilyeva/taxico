@@ -7,10 +7,10 @@
             <label>First Name: </label>
             {{textarea value=driver.first_name class='form-control' rows='1' placeholder='First Name'}}
             {{!--{{#x-select class='form-control'}}
-                            {{#each driverOptions as |driver|}}
-                                {{#x-option value=driver.val}}{{driver.label}}{{/x-option}}
-                            {{/each}}
-                        {{/x-select}}--}}
+                {{#each model as |driver|}}
+                    {{#x-option}}{{driver.id}}{{/x-option}}
+                {{/each}}
+            {{/x-select}}--}}
         </div>
         <div>
             <label>Last Name: </label>
@@ -45,23 +45,24 @@
                     {{#each model as |driver|}}
                         {{#link-to 'drivers.view' driver.id}}
                             <br/>
-                            First Name: {{driver.first_name}}
-                            <br/>
-                            <br/>
-                            Last Name:  {{driver.last_name}}
+                            Name: {{driver.full_name}}
                             <br/>
                             <br/>
                             Driver License Number: {{driver.driver_license_number}}
                             <br/>
                             <br/>
-                            <div align="right">
-                                <button {{action 'remove' driver}} class="btn btn-warning btn-sm navbar-secondary-btn"
-                                                                   type="submit">
-                                    Remove
-                                </button>
-                            </div>
-                            <p class="bottomBorder"></p>
                         {{/link-to}}
+                        <div align="right">
+                            <button class="btn btn-warning btn-sm navbar-secondary-btn"
+                                    type="submit"> {{#link-to 'drivers'}}
+                                View Schedules {{/link-to}}
+                            </button>
+                            <button {{action 'remove' driver}} class="btn btn-warning btn-sm navbar-secondary-btn"
+                                                               type="submit">
+                                Remove
+                            </button>
+                        </div>
+                        <p class="bottomBorder"></p>
                     {{/each}}
                 </div>
             </div>
