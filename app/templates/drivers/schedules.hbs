@@ -1,0 +1,36 @@
+<div style="width: 100%; margin: 0 auto; ">
+    {{#each model as |schedule|}}
+        {{log schedule.id}}
+    {{/each}}
+    <div class="col-md-4" align="center">
+        <legend>
+            <h4 align="center">Schedules for: {{driver.id}}</h4>
+        </legend>
+        <table>
+            <div id="mainbox">
+                <div class="border">
+                    {{#each model as |schedule|}}
+                        <br/>
+                        Vehicle Id: {{schedule.vehicle_id}}
+                        <br/>
+                        <br/>
+                        Start Day: {{schedule.start_day}}
+                        <br/>
+                        <br/>
+                        End Day:: {{schedule.end_day}}
+                        <br/>
+                        <br/>
+                        <div align="right">
+                            <button {{action 'goBack'}} class="btn btn-warning btn-sm navbar-secondary-btn"
+                                                        type="submit">
+                                Back
+                            </button>
+                        </div>
+                        <p class="bottomBorder"></p>
+                    {{/each}}
+                </div>
+            </div>
+        </table>
+    </div>
+</div>
+{{outlet}}

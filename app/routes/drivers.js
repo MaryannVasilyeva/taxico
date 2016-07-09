@@ -5,6 +5,9 @@ export default Ember.Route.extend( {
         return this.store.findAll( 'driver' );
     },
     setupController: function( controller, model ){
+        controller.store.query( 'schedule', { model: 'Schedule', id: model.id } ).then( function( schedule ){
+            controller.set( 'schedule', schedule );
+        } );
         controller.set( 'driver', {
             first_name: null,
             last_name: null,

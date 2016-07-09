@@ -11,7 +11,7 @@ Router.map( function(){
     } );
     this.route( 'drivers', function(){
         this.route( 'view', { path: '/:driver_id' }, function(){
-            this.route( 'viewSchedules', { path: '/viewSchedules' } );
+            this.route( 'schedules', { path: '/schedules' } );
         } );
     } );
     this.route( 'schedules', { path: '/' }, (
