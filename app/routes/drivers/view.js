@@ -7,9 +7,14 @@ export default Ember.Route.extend( {
 
     setupController: function( controller, model ){
         controller.set( 'driver', model );
+
         controller.store.query( 'schedule', { filter: { driver_id: model.id } } ).then( function( schedule ){
             controller.set( 'schedule', schedule );
         } );
+
+        //same thing
+        // controller.set( 'schedule', controller.store.query( 'schedule', { id: this.modelFor( 'drivers.view' ).get( 'id' ) } ) );
+
         // controller.store.query( 'schedule', { model: 'Schedule', id: model.id, driver_id: model.driver_id, vehicle_id: model.vehicle_id } ).then( function( schedule ){
         //     controller.set( 'schedule', schedule );
         // } );
@@ -23,3 +28,5 @@ export default Ember.Route.extend( {
         } );
     }
 } );
+
+

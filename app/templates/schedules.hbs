@@ -8,7 +8,7 @@
         {{#x-select value=schedule.driver_id class='form-control'}}
             {{#x-option value=""}}Select Driver{{/x-option}}
             {{#each driver as |driver|}}
-                {{#x-option value=driver.id}}{{driver.id}}{{/x-option}}
+                {{#x-option value=driver.id}}{{driver.full_name}}{{/x-option}}
             {{/each}}
         {{/x-select}}
     </div>
@@ -18,7 +18,7 @@
         {{#x-select value=schedule.vehicle_id class='form-control'}}
             {{#x-option value=""}}Select Vehicle{{/x-option}}
             {{#each vehicle as |vehicle|}}
-                {{#x-option value=vehicle.id}}{{vehicle.id}}{{/x-option}}
+                {{#x-option value=vehicle.id}}{{vehicle.plate_number}}{{/x-option}}
             {{/each}}
         {{/x-select}}
     </div>
@@ -51,23 +51,12 @@
             Create
         </button>
     </div>
-    {{!--<div>
-        {{#link-to 'schedules.view' schedule.id}}
-            <button class="btn btn-success navbar-secondary-btn" type="submit">Sunday</button>
-            <button class="btn btn-success navbar-secondary-btn" type="submit">Monday</button>
-            <button class="btn btn-success navbar-secondary-btn" type="submit">Tuesday</button>
-            <button class="btn btn-success navbar-secondary-btn" type="submit">Wednesday</button>
-            <button class="btn btn-success navbar-secondary-btn" type="submit">Thursday</button>
-            <button class="btn btn-success navbar-secondary-btn" type="submit">Friday</button>
-            <button class="btn btn-success navbar-secondary-btn" type="submit">Saturday</button>
-        {{/link-to}}
-    </div>--}}
 </div>
 <div class="col-md-2"></div>
 <div style="width: 100%; margin: 0 auto; ">
     <div class="col-md-4" align="right">
         <legend>
-            <h4 align="center">SCHEDULES</h4>
+            <h4 style="font-size: 18px; font-weight: bold; color: #666666" align="center">SCHEDULES</h4>
         </legend>
         <table>
             <div id="mainbox">

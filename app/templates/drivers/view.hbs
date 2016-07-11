@@ -35,14 +35,14 @@
         <br/>
         <br/>
         <legend>
-            <h4 align="center">Schedules for this Driver</h4>
+            <h4 style="font-size: 18px; font-weight: bold; color: #666666" align="center">Schedules for this Driver</h4>
         </legend>
         <table>
             <div id="mainbox">
                 <div class="border">
                     {{#each schedule as |schedule|}}
                         <br/>
-                        Vehicle Id: {{schedule.vehicle_id}}
+                        Vehicle Id: {{schedule.vehicle_plate_number}}
                         <br/>
                         Day of Week: {{schedule.type_into_day}}
                         <br/>
