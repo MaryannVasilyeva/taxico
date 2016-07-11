@@ -7,7 +7,9 @@ export default Ember.Controller.extend( {
             self.get( 'vehicle' ).save().then( function(){
                 self.transitionToRoute( 'vehicles' );
             } );
-
+        },
+        goBack: function(){
+            this.transitionToRoute( 'vehicles' );
         }
     }
 } );

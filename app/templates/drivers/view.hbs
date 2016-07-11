@@ -1,4 +1,4 @@
-<div>
+<div class="col-md-8">
     <p style="font-size: 18px; font-weight: bold; color: #666666">Driver Information</p>
     <hr/>
     <div class="row">
@@ -30,3 +30,33 @@
         </ul>
     </div>
 </div>
+<div style="width: 100%; margin: 0 auto; ">
+    <div class="col-md-4" align="center">
+        <br/>
+        <br/>
+        <legend>
+            <h4 align="center">Schedules for this Driver</h4>
+        </legend>
+        <table>
+            <div id="mainbox">
+                <div class="border">
+                    {{#each schedule as |schedule|}}
+                        <br/>
+                        Vehicle Id: {{schedule.vehicle_id}}
+                        <br/>
+                        Day of Week: {{schedule.type_into_day}}
+                        <br/>
+                        <p class="bottomBorder"></p>
+                    {{/each}}
+                </div>
+            </div>
+            <div align="right">
+                <button {{action 'goBack'}} class="btn btn-warning btn-sm navbar-secondary-btn"
+                                            type="submit">
+                    Back
+                </button>
+            </div>
+        </table>
+    </div>
+</div>
+{{outlet}}

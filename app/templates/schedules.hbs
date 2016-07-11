@@ -1,43 +1,67 @@
-<div style="width: 100%; margin: 0 auto; ">
-    <div class="col-md-6" align="left">
-        <legend>
-            <h4>ADD TO SCHEDULE</h4>
-        </legend>
-        <div>
-            <label>Driver Id: </label>
-            {{!--{{textarea value=schedule.driver_name class='form-control' rows='2' placeholder='Driver Name'}}--}}
-            {{#x-select value=schedule.driver_id class='form-control'}}
-                {{#x-option value=""}}Select Driver{{/x-option}}
-                {{#each driver as |driver|}}
-                    {{#x-option value=driver.id}}{{driver.id}}{{/x-option}}
-                {{/each}}
-            {{/x-select}}
-        </div>
-        <div>
-            <label>Vehicle Id: </label>
-            {{!--{{textarea value=schedule.vehicle_plate_number class='form-control' rows='2' placeholder='Vehicle Plate Number'}}--}}
-            {{#x-select value=schedule.vehicle_id class='form-control'}}
-                {{#x-option value=""}}Select Vehicle{{/x-option}}
-                {{#each vehicle as |vehicle|}}
-                    {{#x-option value=vehicle.id}}{{vehicle.id}}{{/x-option}}
-                {{/each}}
-            {{/x-select}}
-        </div>
-        <div>
-            <label>Start Day: </label>
-            {{textarea value=schedule.start_day class='form-control' rows='2' placeholder='Start Day'}}
-        </div>
-        <div>
-            <label>End Day: </label>
-            {{textarea value=schedule.end_day class='form-control' rows='2' placeholder='End Day'}}
-        </div>
-        <br/>
-        <div>
-            <button {{action 'addSchedule'}} class="btn btn-success navbar-secondary-btn" type="submit">
-                Create
-            </button>
-        </div>
+<div class="col-md-6" align="left">
+    <legend>
+        <h4>ADD TO SCHEDULE</h4>
+    </legend>
+    <div>
+        <label>Driver Id: </label>
+        {{!--{{textarea value=schedule.driver_name class='form-control' rows='2' placeholder='Driver Name'}}--}}
+        {{#x-select value=schedule.driver_id class='form-control'}}
+            {{#x-option value=""}}Select Driver{{/x-option}}
+            {{#each driver as |driver|}}
+                {{#x-option value=driver.id}}{{driver.id}}{{/x-option}}
+            {{/each}}
+        {{/x-select}}
     </div>
+    <div>
+        <label>Vehicle Id: </label>
+        {{!--{{textarea value=schedule.vehicle_plate_number class='form-control' rows='2' placeholder='Vehicle Plate Number'}}--}}
+        {{#x-select value=schedule.vehicle_id class='form-control'}}
+            {{#x-option value=""}}Select Vehicle{{/x-option}}
+            {{#each vehicle as |vehicle|}}
+                {{#x-option value=vehicle.id}}{{vehicle.id}}{{/x-option}}
+            {{/each}}
+        {{/x-select}}
+    </div>
+    <div>
+        <label>Day Of Week: </label>
+        {{!--{{textarea value=schedule.vehicle_plate_number class='form-control' rows='2' placeholder='Vehicle Plate Number'}}--}}
+        {{#x-select value=schedule.type class='form-control'}}
+            {{#x-option value=""}}Select Day{{/x-option}}
+            {{#x-option value=0}}Sunday{{/x-option}}
+            {{#x-option value=1}}Monday{{/x-option}}
+            {{#x-option value=2}}Tuesday{{/x-option}}
+            {{#x-option value=3}}Wednesday{{/x-option}}
+            {{#x-option value=4}}Thursday{{/x-option}}
+            {{#x-option value=5}}Friday{{/x-option}}
+            {{#x-option value=6}}Saturday{{/x-option}}
+
+        {{/x-select}}
+    </div>
+    {{!-- <div>
+          <label>Start Day: </label>
+          {{textarea value=schedule.start_day class='form-control' rows='2' placeholder='Start Day'}}
+      </div>
+      <div>
+          <label>End Day: </label>
+          {{textarea value=schedule.end_day class='form-control' rows='2' placeholder='End Day'}}
+      </div>--}}
+    <br/>
+    <div>
+        <button {{action 'addSchedule'}} class="btn btn-success navbar-secondary-btn" type="submit">
+            Create
+        </button>
+    </div>
+    {{!--<div>
+        {{#link-to 'schedules.view' schedule.id}}
+            <button class="btn btn-success navbar-secondary-btn" type="submit">Sunday</button>
+            <button class="btn btn-success navbar-secondary-btn" type="submit">Monday</button>
+            <button class="btn btn-success navbar-secondary-btn" type="submit">Tuesday</button>
+            <button class="btn btn-success navbar-secondary-btn" type="submit">Wednesday</button>
+            <button class="btn btn-success navbar-secondary-btn" type="submit">Thursday</button>
+            <button class="btn btn-success navbar-secondary-btn" type="submit">Friday</button>
+            <button class="btn btn-success navbar-secondary-btn" type="submit">Saturday</button>
+        {{/link-to}}
+    </div>--}}
 </div>
 <div class="col-md-2"></div>
 <div style="width: 100%; margin: 0 auto; ">
@@ -56,11 +80,9 @@
                         Vehicle Id: {{schedule.vehicle_id}}
                         <br/>
                         <br/>
-                        Starting Day: {{schedule.str_starting_at_date}}
-                        <br/>
-                        <br/>
-                        Ending Day: {{schedule.str_ending_at_date}}
-                        <br/>
+                        {{#link-to 'schedules.view' schedule.id}}
+                            Day of Week: {{schedule.type_into_day}}
+                        {{/link-to}}
                         <p class="bottomBorder"></p>
                     {{/each}}
                 </div>
@@ -68,7 +90,6 @@
         </table>
     </div>
 </div>
-
 {{outlet}}
 
 

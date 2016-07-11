@@ -12,8 +12,9 @@ export default Ember.Route.extend( {
             controller.set( 'vehicle', vehicles );
         } );
         controller.set( 'schedule', {
-            start_day: null,
-            end_day: null,
+            type: null,
+            // start_day: null,
+            // end_day: null,
             vehicle_id: null,
             driver_id: null,
             vehicle_plate_number: null,
@@ -22,8 +23,3 @@ export default Ember.Route.extend( {
         controller.set( 'model', model );
     }
 } );
-
-
-// controller.store.find( 'uber-task', { model: 'Ticket', model_id: model.id } ).then( function( uberTasks ){
-//     controller.set( 'uberTasks', uberTasks );
-// } );

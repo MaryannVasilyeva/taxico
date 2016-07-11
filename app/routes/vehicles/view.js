@@ -6,10 +6,16 @@ export default Ember.Route.extend( {
     },
     setupController: function( controller, model ){
         controller.set( 'vehicle', model );
+        controller.store.query( 'schedule', { filter: { vehicle_id: model.id } } ).then( function( schedule ){
+            controller.set( 'schedule', schedule );
+        } );
     },
     renderTemplate: function(){
         this.render( 'vehicles/view', {
-            into: 'vehicles'
+            into: 'vehicles',
+            outlet: '',
+            controller: 'vehicles/view',
+            templateNmae: 'vehicles/view'
         } );
     }
 } );

@@ -8,6 +8,9 @@ export default Ember.Controller.extend( {
                 self.transitionToRoute( 'drivers' );
             } );
 
+        },
+        goBack: function(){
+            this.transitionToRoute( 'drivers' );
         }
     }
 } );
